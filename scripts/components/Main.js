@@ -6,6 +6,7 @@ export const Main = (data) => {
         <option value="">Ingrédients</option>
   `;
 
+
   let uniqueIngredients = [
     ...new Set(
       data.recipes.flatMap((recipe) =>
@@ -112,17 +113,16 @@ export const Cards = (data) => {
           <h4 class="title__h4">INGRÉDIENTS</h4>
           <section class="ingredients__container">
             ${recipe.ingredients
-              .map(
-                (ingredient) => `
+        .map(
+          (ingredient) => `
               <div class="ingredients__table">
                 <div class="ingredients__item">${ingredient.ingredient}</div>
-                <div class="quantity__item">${ingredient.quantity} ${
-                  ingredient.unit ? ingredient.unit : ""
-                }</div>
+                <div class="quantity__item">${ingredient.quantity} ${ingredient.unit ? ingredient.unit : ""
+            }</div>
               </div>
             `
-              )
-              .join("")}
+        )
+        .join("")}
           </section>
         </div>
       </div>
